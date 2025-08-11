@@ -18,3 +18,4 @@ else:
 # Usar exit() quando quiser testar partes do codigo sem rodar ele todo. O comando exit()
 # deve ficar sempre em baixo do codigo que você quer testar;
 # strip() retira o espaço antes e depois
+# 0

@@ -9,3 +9,4 @@ if (renda_mensal > 2.000)and (negativado == "N" or fiador == "S"):
     print("Empréstimo aprovado!")
 else:
     print("Empréstimo negado!")    
+    # 0

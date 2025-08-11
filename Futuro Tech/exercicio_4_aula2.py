@@ -10,3 +10,4 @@ if media >= 7 and nota_um >= 4 and nota_dois >= 4:
     print("Parabéns! Você foi aprovado.")
 else:
     print("Aluno reprovado.")    
+

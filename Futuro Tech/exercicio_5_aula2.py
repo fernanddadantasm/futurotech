@@ -10,3 +10,4 @@ if 16 <= idade <= 69 and peso > 50 and jejum == "N":
     print("LIBERADO!")
 else:
     print("NEGADO!")
+# 5
