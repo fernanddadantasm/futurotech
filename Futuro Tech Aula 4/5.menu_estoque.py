@@ -2,6 +2,15 @@ import os
 import time
 os.system("cls")
 
+# Conjuntos (SET):
+# conjuntoNomes = {"Ana", "Marta", "Carla", "Antonio", "Ana"}
+# print(conjuntoNomes)
+# Limpeza de conjunto de valores duplicados 
+
+# Tupla:
+# Enviar dados entre aplicações (API), retorno de funções, argumrntos de classes
+# tuplaNomes = ("Ana", "Marta", "Carla" ) Somente leitura (imutável)
+# print(tuplaNomes[1]) Marta
 
 lista_produtos = []
 while True:
