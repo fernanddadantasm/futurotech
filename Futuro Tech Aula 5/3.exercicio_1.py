@@ -21,6 +21,6 @@ produtos = {
 }
 
 print(f"Produto {produtos["descricao"]}\nCódigo {produtos["codigo"]} \nPreço R${produtos["preco"]} \
-    \nTem o peso de {produtos["peso"]} \nNo valor de R${produto["preco"]} a unidade")
+    \nTem o peso de {produtos["peso"]} \nNo valor de R${produto["preco"]} a")
 
    
