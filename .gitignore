@@ -1,0 +1,25 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+# Arquivos/Pastas para ignorar
+# Arquivos Python e sistema
+__pycache__/
+*.pyc
+.env
+*.db
+*.sqlite3
+.DS_Store
+
+# Ambiente virtual (venv, pyenv, etc)
+venv/
+env/
+pyenv/
+.venv/
+.Python
+
+# Streamlit configurações locais
+.streamlit/
+
+# Outros arquivos que podem ser gerados
+*.log
+*.pot
+
