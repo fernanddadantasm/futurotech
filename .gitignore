@@ -8,6 +8,7 @@ __pycache__/
 *.db
 *.sqlite3
 .DS_Store
+.Estoque.db
 
 # Ambiente virtual (venv, pyenv, etc)
 venv/

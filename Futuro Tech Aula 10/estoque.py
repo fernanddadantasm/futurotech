@@ -1,7 +1,7 @@
-
+#Código Principal (Estoque.py)
 
 from funcoes import *
-from sub_menus import *
+from sub_menu_cliente import *
 
 # Menu Principal:
 def menu_principal():
@@ -20,6 +20,10 @@ def menu_principal():
         match(opcao):
             case '1':
                 menu_clientes()
+            case '4':
+                relatorios()
+            case 'S':
+                exit()
 
-# Ponto de Início do App
+# Ponto de Início do App:A
 menu_principal()
