@@ -9,7 +9,11 @@ __pycache__/
 *.sqlite3
 .DS_Store
 .Estoque.db
-
+venv_flask/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 # Ambiente virtual (venv, pyenv, etc)
 venv/
 env/
