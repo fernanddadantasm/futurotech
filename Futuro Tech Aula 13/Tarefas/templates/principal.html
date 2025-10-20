@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Lista de Tarefas{% endblock %}
+{% block content %}
+<h2>Minhas Tarefas</h2>
+
+{% if tarefas %}
+  <ul>
+  {% for tarefa in tarefas %}
+    <li>
+      <strong>{{ tarefa.titulo }}</strong>
+      {% if tarefa.concluida %} ✅ {% endif %}
+      <br>
+      {{ tarefa.descricao or '' }}
+
+      <a href="{{ url_for('tarefas.alterar_tarefa', codigo=tarefa.codigo) }}">Editar</a>
+
+      <form action="{{ url_for('tarefas.excluir_tarefa', codigo=tarefa.codigo) }}" 
+            method="post" 
+            onsubmit="return confirm('Tem certeza que deseja excluir esta tarefa?');"
+            style="display:inline;">
+        <button type="submit" class="button-danger">Excluir</button>
+      </form>
+    </li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>Nenhuma tarefa cadastrada.</p>
+{% endif %}
+{% endblock %}
