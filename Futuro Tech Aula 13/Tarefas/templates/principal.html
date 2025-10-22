@@ -1,25 +1,39 @@
 {% extends "base.html" %}
 {% block title %}Lista de Tarefas{% endblock %}
 {% block content %}
+<style>
+  .task-item { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+  .task-info { flex: 1; }
+  .task-actions { display: flex; gap: 0.5rem; align-items: center; }
+  .button-danger { background: #e74c3c; color: #fff; border: none; padding: 0.35rem 0.6rem; cursor: pointer; }
+  ul.tasks { list-style: none; padding: 0; margin: 0; }
+</style>
+
 <h2>Minhas Tarefas</h2>
 
 {% if tarefas %}
-  <ul>
+  <ul class="tasks">
   {% for tarefa in tarefas %}
-    <li>
-      <strong>{{ tarefa.titulo }}</strong>
-      {% if tarefa.concluida %} ✅ {% endif %}
-      <br>
-      {{ tarefa.descricao or '' }}
+    <li class="task-item">
+      <section class="task-info">
+        <strong>{{ tarefa.titulo }}</strong>
+        {% if tarefa.concluida %} ✅ {% endif %}
+        <div>{{ tarefa.descricao or '' }}</div>
+        <div>Data de Criação: {{ tarefa.data_criacao.strftime('%d/%m/%Y %H:%M:%S') }}</div>
+        <div>Prioridade: {{ tarefa.prioridade | capitalize }}</div>
+      </section>
 
-      <a href="{{ url_for('tarefas.alterar_tarefa', codigo=tarefa.codigo) }}">Editar</a>
+      <div class="task-actions">
+        <form action="{{ url_for('tarefas.alterar_tarefa', codigo=tarefa.codigo) }}" method="get">
+          <button type="submit">Editar</button>
+        </form>
 
-      <form action="{{ url_for('tarefas.excluir_tarefa', codigo=tarefa.codigo) }}" 
-            method="post" 
-            onsubmit="return confirm('Tem certeza que deseja excluir esta tarefa?');"
-            style="display:inline;">
-        <button type="submit" class="button-danger">Excluir</button>
-      </form>
+        <form action="{{ url_for('tarefas.excluir_tarefa', codigo=tarefa.codigo) }}"
+              method="post"
+              onsubmit="return confirm('Tem certeza que deseja excluir esta tarefa?');">
+          <button type="submit" class="button-danger">Excluir</button>
+        </form>
+      </div>
     </li>
   {% endfor %}
   </ul>
